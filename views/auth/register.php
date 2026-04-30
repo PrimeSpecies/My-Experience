@@ -11,7 +11,7 @@
 <body style="background-color: #f8f9fa; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0;">
 
     <div style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); width: 100%; max-width: 400px; border: 1px solid rgba(0,0,0,0.05);">
-        
+
         <div style="text-align: center; margin-bottom: 30px;">
             <div style="font-weight: 800; font-size: 1.5rem; letter-spacing: -1px; margin-bottom: 10px;">ResearchHub</div>
             <h2 style="margin: 0; font-size: 1.25rem; color: #333;">Create an Account</h2>
@@ -26,14 +26,25 @@
 
         <form method="POST" action="index.php?action=register">
             <div style="margin-bottom: 15px;">
+        <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 5px;">Full Name</label>
+        <input type="text" name="name" placeholder="e.g. Mballa Julien" required
+               style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; box-sizing: border-box;">
+    </div>
+
+    <div style="margin-bottom: 15px;">
+        <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 5px;">Phone Number</label>
+        <input type="tel" name="phone_number" placeholder="e.g. +237 650607080" required
+               style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; box-sizing: border-box;">
+    </div>
+            <div style="margin-bottom: 15px;">
                 <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 5px;">Email Address</label>
-                <input type="email" name="email" placeholder="example@email.com" required 
+                <input type="email" name="email" placeholder="e.g. mballasteve@gmail.com" required
                        style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; box-sizing: border-box;">
             </div>
 
             <div style="margin-bottom: 5px;">
                 <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 5px;">Password</label>
-                <input type="password" id="reg_password" name="password" placeholder="••••••••" required 
+                <input type="password" id="reg_password" name="password" placeholder="••••••••" required
                        onkeyup="checkStrength(this.value)"
                        style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; box-sizing: border-box;">
             </div>
@@ -91,7 +102,7 @@
 
         const colors = ['#ff4d4d', '#ff4d4d', '#ffd11a', '#2ecc71', '#2ecc71'];
         const messages = ['Too weak', 'Weak', 'Fair', 'Good', 'Strong!'];
-        
+
         bar.style.width = (strength * 25) + '%';
         bar.style.backgroundColor = colors[strength];
         text.innerText = "Strength: " + messages[strength];
@@ -112,7 +123,7 @@
     // Show the loading overlay
     const overlay = document.getElementById('loading-overlay');
     overlay.style.display = 'flex';
-    
+
     // Optional: Disable the register button to prevent double-clicks
     const btn = this.querySelector('button[type="submit"]');
     if(btn) {

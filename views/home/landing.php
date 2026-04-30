@@ -26,12 +26,12 @@
             <h1 class="hero-title">ResearchHub</h1>
             <p class="hero-subtitle">Discover, Share, and Accelerate Research Worldwide</p>
             <p class="hero-text">Join thousands of researchers accessing millions of academic papers, theses, and documents.</p>
-            
-            <form action="index.php?action=search" method="POST" class="search-container">
+
+            <!-- <form action="index.php?action=search" method="POST" class="search-container">
                 <i data-lucide="search" class="search-icon"></i>
                 <input type="text" name="query" placeholder="Search by title, author, keywords..." required>
                 <button type="submit" class="btn btn-black">Search</button>
-            </form>
+            </form> -->
 
             <div class="stats-grid">
                 <div class="stat-item"><h3>2.5M+</h3><p>Research Papers</p></div>

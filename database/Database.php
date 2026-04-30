@@ -7,7 +7,7 @@ class Database {
     private function __construct() {
         // Use an absolute path to be 100% sure we find the config
         $configPath = dirname(__DIR__) . '/config/database.php';
-        
+
         if (!file_exists($configPath)) {
             die("CRITICAL: Configuration file not found at $configPath");
         }
@@ -15,7 +15,7 @@ class Database {
         $config = require $configPath;
 
         $dsn = "pgsql:host={$config['host']};port={$config['port']};dbname={$config['dbname']}";
-        
+
         try {
             $this->connection = new PDO($dsn, $config['user'], $config['pass'], [
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -40,4 +40,6 @@ class Database {
     public function getConnection() {
         return $this->connection; // This was likely returning null!
     }
+
+
 }
